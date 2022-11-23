@@ -27,4 +27,11 @@ class Consultation extends Model
         'updated_at',
         'deleted_at',
     ];
+
+    //one to many
+    public function appointment()
+    {
+        //2 parameter (path model, field foreign key)
+        return $this->hasMany('App\Models\ManagementAccess\Appointment', 'consultation_id');
+    }
 }
